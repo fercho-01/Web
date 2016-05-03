@@ -20,4 +20,25 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   	</listener>
   	
+  	<!-- Esto es para que funcione el servicio web -->
+  	<servlet>
+  		<!-- Declaracion del servlet rest -->
+  		<servlet-name>Rest</servlet-name>
+  		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+  		<init-param>
+  			<param-name>com.sun.jersey.config.property.packages</param-name>
+  			<!-- Paquete donde se expone los servicios web -->
+  			<param-value>co.udea.edu.iw.ws</param-value>
+  		</init-param>
+  		<!-- Apenas se inicie el sistema va a buscar el paquete y carga los servicios web en memoria 
+  		 carga primero los que tengan load-on-startup 1-->
+  		<load-on-startup>1</load-on-startup>
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>Rest</servlet-name>
+  		<!-- Ruta a la cual responde el servlet Rest -->
+  		<url-pattern>/rest/*</url-pattern>
+  	</servlet-mapping>
+  	
 </web-app>
