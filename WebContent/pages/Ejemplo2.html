@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejemplo</title>
+		<!-- Forma correcta de poner enlaces de los recursos -->
+		<script src="../resources/js/angular.min.js" ></script>
+	</head>
+	
+	<!-- 
+		ng-app designa el elemento raiz de la aplicación, todo lo que va dentro de body va a 
+		ser dominado por angular, si uso una etiqueta de angular por fuera de body, angular no me la 
+		reconoce.
+		
+		Si hay varias etiquetas ng-app la primera se ejecuta por defecto, las otras deben de tener un
+		disparador.
+	-->
+	<body ng-app>
+		<div>
+			<!-- 
+				ng-model quiere decir que todo valor de esta etiqueta va a ser llevado a una
+			 	variable.
+			 -->
+			Ingrese su nombre: <input type="text" ng-model="mensaje">
+		</div>
+		<div>
+			Hola:{{mensaje}}
+		</div>
+	</body>
+</html>

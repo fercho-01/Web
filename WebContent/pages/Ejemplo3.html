@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="miAplicacion">
+<head>
+<title>Ejemplo Angular</title>
+<script src="../resources/js/angular.min.js"></script>
+<script src="../resources/js/Controlador.js"></script>
+</head>
+<body>
+	<div ng-controller="Controlador">
+		<!-- la funcion eliminar() va a ser invocada cuando se de click en el enlace
+			, la función eliminar hace parte del controlador de angular -->
+			
+		<a href="#" ng-click="eliminar()"> Eliminar seleccionados </a>
+		<ul>
+		
+		<!-- este elemento se va a repetir por cada elemento dentro de item -->
+			<li ng-repeat="item in lista">
+			<input type="checkbox" ng-model="item.seleccionado" /> <span> {{item.texto}} </span></li>
+		</ul>
+		<!-- ng-submit quiere decir que cuando el formulario haga submit se ejecuta
+			la funcion agregar del controlador de angular -->
+		<form ng-submit="agregar()">
+			<input type="text" ng-model="texto"/> 
+			<input type="submit" value="Agregar" />
+		</form>
+	</div>
+</body>
+</html>

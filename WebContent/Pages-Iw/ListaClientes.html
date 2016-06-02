@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../resources/js/angular.min.js"></script>
+	<script src="../resources/js/clientes.js"></script>
+</head>
+<body ng-app="clientes">
+	<div ng-controller="listaClientes">
+		<table border="1" width="100%">
+			<tr>
+				<th>Cedula</th>
+				<th>Nombre completo</th>
+				<th>Correo electrónico</th>
+			</tr>
+			<tr ng-repeat="cliente in clientes">
+				<td>{{cliente.cedula}}</td>
+				<td>{{cliente.nombre+" "+cliente.apellido}}</td>
+				<td>{{cliente.email}}</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

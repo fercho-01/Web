@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo</title>
+</head>
+<body>
+	<div>
+		<!-- this quiere decir que se le pasa referencia a todo el input -->
+		Ingrese su nombre <input type="text" onkeyup="actualizar(this)"/>
+	</div>
+	<div id="idNombre">
+		Hola:
+	</div>
+	<script type="text/javascript">
+		function actualizar(elem){
+			var nombre = elem.value;
+			var salida = document.getElementById("idNombre");
+			salida.innerHTML = "Hola: "+s;
+		}
+	</script>
+
+</body>
+</html>

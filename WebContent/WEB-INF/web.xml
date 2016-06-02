@@ -12,7 +12,7 @@
   
   <context-param>
   	<param-name>contextConfigLocation</param-name>
-  	<param-value>classpath:configuracion.xml</param-value>
+  	<param-value>WEB-INF/configuracion.xml</param-value>
   </context-param>
   
 		
@@ -24,7 +24,12 @@
   	<servlet>
   		<!-- Declaracion del servlet rest -->
   		<servlet-name>Rest</servlet-name>
-  		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+  		<!-- Se usa cuando no hay que hacer integracion con spring -->
+  		<!-- <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>  -->
+  		
+  		<!-- Se usa para hacer integracion con spring -->
+  		<servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
+  		
   		<init-param>
   			<param-name>com.sun.jersey.config.property.packages</param-name>
   			<!-- Paquete donde se expone los servicios web -->
